@@ -1,7 +1,7 @@
 % mountainplot.Rnw
-% Time-stamp: <25 Jan 2015 20:23:40 c:/x/rpack/mountainplot/vignettes/mountainplot.Rnw>
+% Time-stamp: <05 Jun 2015 09:51:36 c:/x/rpack/mountainplot/vignettes/mountainplot.Rnw>
 
-% \VignetteIndexEntry{Examples of mountain plots}
+% \VignetteIndexEntry{Introduction to the mountainplot package}
 % \VignetteEngine{knitr::knitr}
 
 \documentclass[12pt]{article}
@@ -14,7 +14,6 @@
 
 \usepackage[colorlinks,citecolor=navy,linkcolor=navy,urlcolor=navy]{hyperref}
 
-%\usepackage{url}     % Don't break long URLs
 \raggedright         % Don't right-justify
 \usepackage{parskip} % Extra vertical space between paragraphs
 
@@ -76,14 +75,14 @@ into a new variable called \code{section}.
 <<>>=
 library("mountainplot")
 data(singer, package = "lattice")
-singer <- within(singer, {
+parts <- within(singer, {
 section <- voice.part
 section <- gsub(" 1", "", section)
 section <- gsub(" 2", "", section)
 section <- factor(section)
 })
 # Change levels to logical ordering
-levels(singer$section) <- c("Bass","Tenor","Alto","Soprano")
+levels(parts$section) <- c("Bass","Tenor","Alto","Soprano")
 @
 
 \section{Mountain plot}
@@ -95,7 +94,7 @@ similar to an ordinary empirical CDF, but once the cumulative probability reache
 Here is an example of the traditional empirical CDFs.
 <<mtn>>=
 require(latticeExtra) # for ecdfplot
-ecdfplot(~height|section, data = singer, groups=voice.part, type='l',
+ecdfplot(~height|section, data = parts, groups=voice.part, type='l',
          layout=c(1,4),
          main="Empirical CDF",
          auto.key=list(columns=4), as.table=TRUE)
@@ -103,14 +102,15 @@ ecdfplot(~height|section, data = singer, groups=voice.part, type='l',
 
 Here is a view of the same data shown with a mountain plot.
 <<>>=
-mountainplot(~height|section, data = singer, groups=voice.part, type='l',
-                      layout=c(1,4),
+mountainplot(~height|section, data = parts,
+             groups=voice.part, type='l',
+             layout=c(1,4),
              main="Folded Empirical CDF",
              auto.key=list(columns=4), as.table=TRUE)
 @
 
-Monti (1995) claims that a mountain plot facilitates the following tasks when
-exploring data:
+Monti (1995) suggestys that a mountain plot is helpful with exploring data and
+makes it easier to:
 \begin{enumerate}
 \item Determine the median.
 \item Determine the range.
@@ -121,6 +121,8 @@ exploring data:
 \item Compare multiple distributions.
 \item Visually examine the sample size.
 \end{enumerate}
+Additionally, the area under the curve is equal to the mean absolute deviation
+(MAD) (Xue \& Titterington, 2011).
 
 % ----------------------------------------------------------------------------
 
@@ -137,5 +139,11 @@ K. L. Monti. (1995)
 Folded empirical distribution function curves-mountain plots.
 \emph{The American Statistician}, 49, 342--345.
 \url{http://www.jstor.org/stable/2684570}
+
+J. H. Xue and D. M. Titterington, (2011). 
+The p-folded cumulative distribution function and the mean absolute
+deviation from the p-quantile.
+\emph{Statistics \& Probability Letters}, 81, 1179-1182.
+\url{http://dx.doi.org/10.1016/j.spl.2011.03.014}
 
 \end{document}

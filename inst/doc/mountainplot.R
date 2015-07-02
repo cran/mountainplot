@@ -6,25 +6,26 @@ options(width=90)
 ## ---------------------------------------------------------------------------------------
 library("mountainplot")
 data(singer, package = "lattice")
-singer <- within(singer, {
+parts <- within(singer, {
 section <- voice.part
 section <- gsub(" 1", "", section)
 section <- gsub(" 2", "", section)
 section <- factor(section)
 })
 # Change levels to logical ordering
-levels(singer$section) <- c("Bass","Tenor","Alto","Soprano")
+levels(parts$section) <- c("Bass","Tenor","Alto","Soprano")
 
 ## ----mtn--------------------------------------------------------------------------------
 require(latticeExtra) # for ecdfplot
-ecdfplot(~height|section, data = singer, groups=voice.part, type='l',
+ecdfplot(~height|section, data = parts, groups=voice.part, type='l',
          layout=c(1,4),
          main="Empirical CDF",
          auto.key=list(columns=4), as.table=TRUE)
 
 ## ---------------------------------------------------------------------------------------
-mountainplot(~height|section, data = singer, groups=voice.part, type='l',
-                      layout=c(1,4),
+mountainplot(~height|section, data = parts,
+             groups=voice.part, type='l',
+             layout=c(1,4),
              main="Folded Empirical CDF",
              auto.key=list(columns=4), as.table=TRUE)
 
