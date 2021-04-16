@@ -39,6 +39,3 @@ dmice <- data.frame(
 mountainplot(~albumen, data=dmice, group=group, auto.key=list(columns=3),
              main="Diabetic mice", xlab="Nitrogen-bound bovine serum albumen")
 
-## ----session----------------------------------------------------------------------------
-sessionInfo()
-
