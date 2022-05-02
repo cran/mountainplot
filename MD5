@@ -1,14 +1,14 @@
-37ae606aea69d657ba50c407c8b87680 *DESCRIPTION
+043a81a101b78d37175368468f1e5ea6 *DESCRIPTION
 43bd99f9e06f2d320a5a3f126428c0a5 *NAMESPACE
-d5b91e25cc8cb177d908f1c538caeb50 *NEWS.md
+73b7a0ecac9b5301618e433cffc820e9 *NEWS.md
 1313058a2d73c95a51b81249bae9acb9 *R/mountainplot.R
-3d6d11b56d754e4c3abe0159bea1fdf1 *build/vignette.rds
-d6282ddc39a9a141770498b5b9bce39e *inst/doc/mountainplot_examples.R
-b5890826c33c0397e060a7c72f86471b *inst/doc/mountainplot_examples.Rmd
-fb12108d46ff3a1e6a2a83a4fb3067c5 *inst/doc/mountainplot_examples.html
+2daf97da0a2dc2dfb4dc80d49bec1e62 *build/vignette.rds
+ce56a60f4bf256a6df6534538e8b1329 *inst/doc/mountainplot_examples.R
+11604815c3bb49429e5db6f612911ecf *inst/doc/mountainplot_examples.Rmd
+ff102592ac04a864b865f70c8f4f0b51 *inst/doc/mountainplot_examples.html
 1a0044efdf5e1a43e95e8adff04e6d01 *man/figures/logo.png
 3b34da87c4ac2f63fdffcfb7b2124858 *man/figures/mountain_clipart.png
-40c0d538328492dfdf015642a37e8346 *man/figures/mountainplot.png
+eb22d71384c519369361f81a57255983 *man/figures/mountainplot.png
 c311bc86c92c10959735fb5244128844 *man/figures/mountainplot_full_logo.png
 06b7c17594642630227501ff6db28972 *man/mountainplot.Rd
 628f5c2e1d1e67b71a6484fd3ab8d294 *man/panel.mountainplot.Rd
@@ -16,4 +16,4 @@ c311bc86c92c10959735fb5244128844 *man/figures/mountainplot_full_logo.png
 bf9f3dfc3e54b28e28874216e34ce221 *tests/testthat.R
 3feb8c949377cf5b0a88e8c5c97a4bc5 *tests/testthat/test_mountainplot.R
 db2501967fd02978c4af8d3157723e54 *vignettes/mountainplot.bib
-b5890826c33c0397e060a7c72f86471b *vignettes/mountainplot_examples.Rmd
+11604815c3bb49429e5db6f612911ecf *vignettes/mountainplot_examples.Rmd
